@@ -1,4 +1,4 @@
-# MRTG script by Hakan "deegan" Bjoerklund
+# MRTG scrip av Hakan "linuxguden" Bjoerklund
 
 Edit config to reflect your working enviroment.
 
@@ -8,9 +8,6 @@ Edit config to reflect your working enviroment.
 4) ./start-mrtg.sh
 5) ./update-mrtg.sh
 6) ./make-index.sh
-
-A one-liner.
-./make-cfg.sh ; ./update-host-cfg.sh ; ./start-mrtg.sh ; ./update-mrtg.sh ; ./make-index.sh
 
 Add update-mrtg.sh to crontab.
 

@@ -1,0 +1,5 @@
+# path's needed for mrtg.
+MRTG_ROOT="/mrtg"
+DIRCFG="/mrtg/cfg"
+DIRHTML="/mrtg"
+CWD="/mrtg/scripts"

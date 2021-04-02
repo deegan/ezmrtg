@@ -3,7 +3,7 @@ FROM alpine:edge
 # RUN stuff to build image.
 RUN apk add --update 
 RUN apk add bash nginx mrtg git php-fpm
-RUN git clone https://github.com/deegan/mrtg.git /mrtg
+RUN git clone https://github.com/deegan/ezmrtg.git /mrtg
 RUN mkdir /etc/periodic/1min
 RUN mkdir /mrtg/cfg/
 # RUN mkdir /run/nginx/
