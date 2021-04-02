@@ -6,7 +6,7 @@ RUN apk add bash nginx mrtg git php-fpm
 RUN git clone https://github.com/deegan/mrtg.git /mrtg
 RUN mkdir /etc/periodic/1min
 RUN mkdir /mrtg/cfg/
-RUN mkdir /run/nginx/
+# RUN mkdir /run/nginx/
 RUN cp /mrtg/scripts/update-mrtg.sh /etc/periodic/1min 
 
 # COPY necessary files.
