@@ -1,20 +1,7 @@
-# MRTG script by Hakan "deegan" Bjoerklund
-
-Edit config to reflect your working enviroment.
-
-1) add host to hosts
-2) ./make-cfg.sh
-3) ./update-host-cfg.sh
-4) ./start-mrtg.sh
-5) ./update-mrtg.sh
-6) ./make-index.sh
-
-A one-liner.
-./make-cfg.sh ; ./update-host-cfg.sh ; ./start-mrtg.sh ; ./update-mrtg.sh ; ./make-index.sh
-
-Add update-mrtg.sh to crontab.
-
-# runs every 5minutes. with debug logging.
-*/5 * * * * $PATH_TO_SCRIPTS/update-mrtg.sh > /dev/null
-# without debugging.
-*/5 * * * * $PATH_TO_SCRIPTS/update-mrtg.sh > /dev/null 2>&1
+# ezmrtg 
+docker run -d --rm --name ezmrtg \
+    -p 80:80 \                          # or some other unused port.
+    -v /path/to/mrtg/cfg:/mrtg/cfg      # optional but recomended.
+    -v /path/to/mrtg/data:/mrtg/data    # optional but recomended.
+    -e SNMP_HOSTS='1.2.3.4 5.6.7.8'     # only necessary on the inital run, but this is how you add new nodes.
+    legolator/ezmrtg
