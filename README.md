@@ -7,3 +7,4 @@ docker run -d --rm --name ezmrtg \
     -e SNMP_HOSTS='1.2.3.4 5.6.7.8' \    # only necessary on the inital run, but this is how you add new nodes.
     legolator/ezmrtg
 ```
+
