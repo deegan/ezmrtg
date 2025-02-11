@@ -8,6 +8,8 @@ source hosts
 
 for HOST in $HOSTS
 do
+    COMMUNITY=$(echo $HOST|awk -F ":" '{ print $2 }')
+    HOST=$(echo $HOST|awk -F ":" '{ print $1 }')
     if [ ! -e $DIRCFG/$HOST.cfg_l ]
     then
         echo -n "$HOST: "

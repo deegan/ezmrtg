@@ -9,6 +9,8 @@ COMMUNITY="public"
 # Make configuration file
 for HOST in $HOSTS
 do
+  COMMUNITY=$(echo $HOST|awk -F ":" '{ print $2 }')
+  HOST=$(echo $HOST|awk -F ":" '{ print $1 }')
 	if [ ! -d $MRTG_ROOT/data/$HOST ]; then
 		echo "Creating directory for host: $HOST";
 		mkdir -p $MRTG_ROOT/data/$HOST
