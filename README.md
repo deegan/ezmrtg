@@ -1,5 +1,3 @@
-# README.md
-
 ## Project Overview
 
 ezmrtg is a Docker-based MRTG (Multi Router Traffic Grapher) monitoring solution that simplifies network device monitoring via SNMP. The application runs in an Alpine Linux container with nginx, MRTG, PHP-FPM, and automated monitoring scripts.
