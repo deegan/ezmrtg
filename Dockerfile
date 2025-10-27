@@ -10,7 +10,7 @@ RUN cp /mrtg/scripts/update-mrtg.sh /etc/periodic/1min
 
 # COPY necessary files.
 COPY crontabs /etc/crontabs/root
-COPY mrtg.conf /etc/nginx/conf.d/default.conf
+COPY mrtg.conf /etc/nginx/nginx.conf
 
 # RUN the processes.
 WORKDIR /mrtg/scripts
