@@ -1,0 +1,26 @@
+services:
+  ezmrtg:
+    image: legolator/ezmrtg:latest
+    container_name: ezmrtg
+    pull_policy: always
+    volumes:
+      - /opt/docker/ezmrtg/cfg:/mrtg/cfg
+      - /opt/docker/ezmrtg/data:/mrtg/data
+    labels:
+        # traefik common
+        - traefik.enable=true
+        - traefik.docker.network=traefik
+        #traefikv2
+        - traefik.http.routers.ezmrtg.rule=Host("ezmrtg.domain.tld")
+        - traefik.http.routers.ezmrtg.entryPoints=http,https
+        - traefik.http.routers.ezmrtg.tls=true
+        - traefik.http.services.ezmrtg.loadbalancer.server.port=80
+        - traefik.http.routers.ezmrtg.service=ezmrtg
+    environment:
+        - SNMP_HOSTS=192.168.0.1 192.168.0.10 10.8.4.32
+    networks:
+        - traefik
+    restart: unless-stopped
+networks:
+  traefik:
+    external: true

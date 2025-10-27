@@ -1,0 +1,13 @@
+services:
+  ezmrtg:
+    image: legolator/ezmrtg:latest
+    container_name: ezmrtg
+    pull_policy: always
+    volumes:
+      - /opt/docker/ezmrtg/cfg:/mrtg/cfg
+      - /opt/docker/ezmrtg/data:/mrtg/data
+    ports:
+      - 80:80
+    environment:
+        - SNMP_HOSTS=192.168.2.246 192.168.88.1 192.168.2.1 192.168.2.251 192.168.2.229
+    restart: unless-stopped
